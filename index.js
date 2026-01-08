@@ -26,7 +26,7 @@ let nickRemoveEnabled = false;
 let gcAutoRemoveEnabled = false;
 let currentCookies = null;
 let reconnectAttempt = 0;
-const signature = `\n                      ♦♦♦♦♦\n            🕊️ ─╼≛◉🎲╮👑╭🎲◉≛╾─ ◖◖◙ﾆﾆ◙≛𝐑𝐊 𝐑𝐀𝐉𝐀 ≛◙ﾆﾆ◙◗◗  𝗗0𝗡 0𝗡𝗙||𝗥3 ; ♥️
+const signature = `\n                      ♦♦♦♦♦\n            🕊️ ─╼≛◉🎲╮👑╭🎲◉≛╾─ ◖◖◙ﾆﾆ◙≛𝐕𝐈𝐈𝐒𝐇𝐀𝐍𝐔 ≛◙ﾆﾆ◙◗◗  𝗗0𝗡 0𝗡𝗙||𝗥3 ; ♥️
 const separator = `\n---😈---😈---😈---😈---😈---😈---`;
 
 // --- UTILITY FUNCTIONS ---
@@ -167,7 +167,7 @@ async function setBotNicknamesInGroups() {
 
 async function sendStartupMessage() {
   if (!botAPI) return;
-  const startupMessage = `😈𝗔𝗟𝗟 𝗛𝗔𝗧𝗘𝗥 𝗞𝗜 𝗠𝗔𝗔 𝗖𝗛𝗢𝗗𝗡𝗘 𝗩𝗔𝗟𝗔 𝗥𝗞 𝗗𝗔𝗥𝗜𝗡𝗗𝗔 𝗕𝗢𝗧 𝗛𝗘𝗥𝗘😈`;
+  const startupMessage = `😈𝗔𝗟𝗟 𝗛𝗔𝗧𝗘𝗥 𝗞𝗜 𝗠𝗔𝗔 𝗖𝗛𝗢𝗗𝗡𝗘 𝗪𝗔𝗟𝗔 𝗩𝗜𝗜𝗦𝗛𝗔𝗡𝗨 𝗗𝗔𝗥𝗜𝗡𝗗𝗔 𝗕𝗢𝗧 𝗛𝗘𝗥𝗘😈`;
   try {
     const threads = await botAPI.getThreadList(100, null, ['GROUP']);
     for (const thread of threads) {
@@ -263,7 +263,7 @@ async function handleBotAddedToGroup(api, event) {
   if (logMessageData.addedParticipants.some(p => p.userFbId === botID)) {
     try {
       await api.changeNickname(botNickname, threadID, botID);
-      await api.sendMessage(`😈HATER KI MAA CHODNE 𝗩𝗔𝗟𝗔 𝗗𝗔𝗥𝗜𝗡𝗗𝗔 𝗕𝗢𝗧 𝗛𝗘𝗥𝗘😈`, threadID);
+      await api.sendMessage(`😈𝗛𝗔𝗧𝗘𝗥 𝗠𝗔𝗔 𝗞𝗜 𝗖𝗛𝗢𝗗𝗡𝗘 𝗪𝗔𝗟𝗔 𝗗𝗔𝗥𝗜𝗡𝗗𝗔 𝗕𝗢𝗧 𝗛𝗘𝗥𝗘😈`, threadID);
       emitLog(`✅ Bot added to new group: ${threadID}. Sent welcome message and set nickname.`);
     } catch (e) {
       emitLog('❌ Error handling bot addition: ' + e.message, true);
